@@ -1,9 +1,10 @@
 import React from 'react';
+import {Header} from './components/layout/Header';
+import {Sidebar} from './components/layout/Sidebar';
 
 export const App = () => (
   <div className="App">
-    <header className="App-header">
-      <p>Hello React World - We'll build Todoist copy there.</p>
-    </header>
+    <Header />
+    <Sidebar />
   </div>
 )
