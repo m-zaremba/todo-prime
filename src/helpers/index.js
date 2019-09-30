@@ -1,4 +1,4 @@
 import {collatedTasks} from '../constants';
 
-export getCollatedTasksExist = selectedProject =>
+export const getCollatedTasksExist = selectedProject =>
   collatedTasks.find(task => task.key === selectedProject);

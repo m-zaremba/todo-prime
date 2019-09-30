@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {firebase} from '../firebase';
-import {collatedTasksExist} from '../helpers';
+import {getCollatedTasksExist} from '../helpers';
 import moment from 'moment';
 
 //const collatedTasksExist = () => {};
@@ -15,7 +15,7 @@ export const useTasks = selectedProject => {
       .collection('tasks')
       .where('userId', '==', 'testUserForTheAppDevelopment');
 
-      unsubscribe = selectedProject && !collatedTasksExist(selectedProject) ?
+      unsubscribe = selectedProject && !getCollatedTasksExist(selectedProject) ?
       (unsubscribe = unsubscribe.where('projectId', '==', selectedProject))
       : selectedProject === 'TODAY'
       ? (unsubscribe = unsubscribe.where(
@@ -38,7 +38,7 @@ export const useTasks = selectedProject => {
           ? newTasks.filter(
             task => moment(task.date, 'DD/MM/YYYY').diff(moment(), 'days') <= 7 && task.archived !== true
           )
-          : newTasks.filter(task => taks.archived !== true)
+          : newTasks.filter(task => task.archived !== true)
         );
 
         setArchivedTasks(newTasks.filter(task => task.archived !== false))
