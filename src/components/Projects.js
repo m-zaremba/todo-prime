@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {useSelectedProjectValue, useProjectsValue} from '../context';
+import {IndividualProject} from './IndividualProject';
 
 export const Projects = ({activeValue = null}) => {
   const [active, setActive] = useState(activeValue);
   const {setSelectedProject} = useSelectedProjectValue();
   const {projects} = useProjectsValue();
 
-  console.log(projects);
 
   return (
     projects &&
@@ -14,7 +14,7 @@ export const Projects = ({activeValue = null}) => {
       <li
         key={project.projectId}
         data-doc-id={project.docId}
-        data-testId='project-action'
+        data-testid='project-action'
         className={
           active === project.projectId
             ? 'active sidebar__project'
@@ -28,7 +28,7 @@ export const Projects = ({activeValue = null}) => {
           setActive(project.projectId);
           setSelectedProject(project.projectId);
         }}>
-        {('Project', JSON.stringify(project))}
+        <IndividualProject project={project} />
       </li>
     ))
 
