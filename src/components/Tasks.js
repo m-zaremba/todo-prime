@@ -14,14 +14,12 @@ export const Tasks = () => {
 
   let projectName = '';
 
-  if (projects && selectedProject && !collatedTasksExist(selectedProject)) {
-    projectName = getTitle(projects, selectedProject).name;
-    console.log('Project name 1', projectName);
-  }
-
   if (collatedTasksExist(selectedProject) && selectedProject) {
     projectName = getCollatedTitle(collatedTasks, selectedProject).name;
-    console.log('Project name 2', projectName);
+  }
+
+  if (projects.length > 0 && selectedProject && !collatedTasksExist(selectedProject)) {
+    projectName = getTitle(projects, selectedProject).name;
   }
 
   useEffect(() => {
