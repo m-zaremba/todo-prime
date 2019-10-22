@@ -25,6 +25,7 @@ export const ProjectOverlay = ({setProject, showProjectOverlay, setShowProjectOv
                 }}
                 role="button"
                 tabIndex={0}
+                aria-label='Select the task project'
               >
                 {project.name}
               </div>

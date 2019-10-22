@@ -61,6 +61,7 @@ export const AddTask = ({
       {showAddTaskMain && (
         <div
           className="add-task__shallow"
+          aria-label='Add task'
           data-testid='show-main-action'
           onClick={() => setShowMain(!showMain)}
           onKeyDown={() => setShowMain(!showMain)}
@@ -80,6 +81,7 @@ export const AddTask = ({
                 <h2 className="header">Quick Add Task</h2>
                 <span
                   className="add-task__cancel-x"
+                  aria-label='Cancel adding task'
                   data-testid='add-task-quick-cancel'
                   onClick={() => {
                     setShowMain(false);
@@ -138,6 +140,7 @@ export const AddTask = ({
                 setShowProjectOverlay(false);
               }}
               tabIndex={0}
+              aria-label='Cancel adding a task'
               role='button'
             >
               Cancel

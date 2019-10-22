@@ -17,6 +17,7 @@ export const Sidebar = () => {
           className={active === 'inbox' ? 'active' : undefined}
         >
           <div
+            aria-label='Show inbox tasks'
             data-testid="inbox-action"
             tabIndex={0}
             role="button"
@@ -40,6 +41,7 @@ export const Sidebar = () => {
           className={active === 'today' ? 'active' : undefined}
         >
           <div
+            aria-label="Show today's tasks"
             data-testid="today-action"
             tabIndex={0}
             role="button"
@@ -63,6 +65,7 @@ export const Sidebar = () => {
           className={active === 'next_7' ? 'active' : undefined}
         >
           <div
+            aria-label='Show tasks for the next 7 days'
             data-testid="next_7-action"
             tabIndex={0}
             role="button"
@@ -84,6 +87,7 @@ export const Sidebar = () => {
       </ul>
 
       <div
+        aria-label='Show/Hide projects'
         className="sidebar__middle"
         onClick={() => setShowProjects(!showProjects)}
         onKeyDown={() => setShowProjects(!showProjects)}

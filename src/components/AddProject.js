@@ -31,6 +31,7 @@ export const AddProject = ({shouldShow = false}) => {
       {show && (
         <div className="add-project__input" data-testid="add-project-inner">
           <input
+            aria-label='Enter your task'
             value={projectName}
             onChange={e => setProjectName(e.target.value)}
             className="add-project__name"
@@ -61,7 +62,7 @@ export const AddProject = ({shouldShow = false}) => {
       )}
       <span className="add-project__plus">+</span>
       <span
-        aria-label="Add Project"
+        aria-label="Add project"
         data-testid="add-project-action"
         className="add-project__text"
         onClick={() => setShow(!show)}
