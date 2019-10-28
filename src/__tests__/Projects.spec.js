@@ -48,5 +48,17 @@ describe('<ProjectOverlay />', () => {
       fireEvent.keyDown(queryByTestId('project-action'));
       expect(queryByTestId('project-action-parent').classList.contains('active')).toBeTruthy();
     });
+
+    it('renders the projects with no active value', () => {
+      const { queryByTestId } = render(<Projects activeValue="1" />);
+      expect(queryByTestId('project-action')).toBeTruthy();
+
+      fireEvent.keyDown(queryByTestId('project-action'));
+      expect(
+        queryByTestId('project-action-parent').classList.contains(
+          'sidebar__project'
+        )
+      ).toBeTruthy();
+    });
   });
 });
