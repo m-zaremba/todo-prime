@@ -16,7 +16,7 @@ body {
   line-height: 1;
   font-family: 'Roboto', sans-serif;
   color: rgb(32, 32, 32);
-  background-color: rgb(250, 250, 250);
+  // background-color: rgb(250, 250, 250);
   font-smooth: always;
   -webkit-font-smoohing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -131,11 +131,179 @@ $generic-bg: rgb(219, 77, 64);
 // Darkmode
 
 .darkmode {
+
+
+  background-color: #282828;
+
+
   header {
     -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
-    background-color: rgb(40, 40, 40);
+    background-color: #282828;
     border-color: transparent;
+  }
+
+  .sidebar {
+    background-color: #282828;
+    color: rgba(255, 255, 255, .87);
+    border-right: none;
+
+    &__project {
+      // cursor: pointer;
+
+      // div:nth-child(1) {
+      //   padding-left: 10px;
+      //   padding-right: 15px;
+      //   width: 100%;
+      //   display: flex;
+      //   align-items: center;
+      // }
+
+      &-delete {
+        // margin-left: auto;
+        // display: none;
+
+        svg {
+          color: rgb(201, 201, 201);
+
+          &:hover {
+            color: #dd4b39;
+          }
+        }
+      }
+
+      &.active, &:hover {
+        // font-weight: bold;
+        background-color: #363636;
+      }
+
+      // &:nth-child(1) {
+      //   .sidebar__dot {
+      //     color: #6accbc;
+      //   }
+      // }
+      // &:nth-child(2) {
+      //   .sidebar__dot {
+      //     color: #fad003;
+      //   }
+      // }
+      // &:nth-child(3) {
+      //   .sidebar__dot {
+      //     color: #ff8d85;
+      //   }
+      // }
+      // &:nth-child(4) {
+      //   .sidebar__dot {
+      //     color: #ff9932;
+      //   }
+      // }
+      // &:nth-child(5) {
+      //   .sidebar__dot {
+      //     color: #af38eb;
+      //   }
+      // }
+    }
+
+    // &__projects {
+    //   padding-left: 3px;
+    // }
+    //
+    // &__project {
+    //   @include va('left');
+    // }
+    //
+    // &__dot {
+    //   margin-right: 10px;
+    //   font-size: 30px;
+    // }
+
+    &__middle {
+      // margin-top: 20px;
+      // margin-bottom: 20px;
+      // display: flex;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      // padding-left: 10px;
+      // cursor: pointer;
+
+      span {
+        color: #343434;
+        margin-right: 10px;
+
+        // svg.hidden-projects {
+        //   transform: rotate(-90deg);
+        // }
+      }
+
+      h2 {
+        margin: 0;
+        color: rgba(255, 255, 255, .87);
+        font-size: 15px;
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
+    }
+
+
+    &__generic {
+      li {
+        list-style-type: none;
+        color: rgba(255, 255, 255, .87);
+        display: flex;
+        cursor: pointer;
+        line-height: 1.5;
+        font-size: 15px;
+        padding: inherit 0;
+        // padding-left: 0;
+        // padding-right: 0;
+
+        div:nth-child(1) {
+          display: flex;
+          align-items: center;
+          padding: 10px 0 10px 10px;
+          width: 100%;
+
+          span:first-of-type {
+            margin-right: 10px;
+            display: flex;
+
+            svg {
+              width: 18px;
+              height: 18px;
+              color: rgb(85, 85, 85);
+            }
+
+            .inbox-icon {
+              color: #5297ff;
+            }
+
+            .today-icon {
+              color: #25b84c;
+            }
+
+            .next_7-icon {
+              color: #a970ff;
+            }
+          }
+        }
+
+
+        &.active, &:hover {
+          // font-weight: bold;
+          background-color: #363636;
+        }
+      }
+    }
+  }
+
+  .tasks {
+    background-color: #1f1f1f;
+    color: rgba(255, 255, 255, .87);
+    border-right: none;
+
+    &__list li {
+      color: inherit;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
   }
 }
 
@@ -375,6 +543,18 @@ header {
             width: 18px;
             height: 18px;
             color: rgb(85, 85, 85);
+          }
+
+          .inbox-icon {
+            color: #5297ff;
+          }
+
+          .today-icon {
+            color: #25b84c;
+          }
+
+          .next_7-icon {
+            color: #a970ff;
           }
         }
       }

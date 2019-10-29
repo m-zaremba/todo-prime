@@ -31,7 +31,7 @@ export const Sidebar = () => {
             }}
           >
             <span>
-              <FaInbox />
+              <FaInbox className='inbox-icon' />
             </span>
             <span>Inbox</span>
           </div>
@@ -55,7 +55,7 @@ export const Sidebar = () => {
             }}
           >
             <span>
-              <FaRegCalendar />
+              <FaRegCalendar className='today-icon'/>
             </span>
             <span>Today</span>
           </div>
@@ -79,7 +79,7 @@ export const Sidebar = () => {
             }}
           >
             <span>
-              <FaRegCalendarAlt />
+              <FaRegCalendarAlt className='next_7-icon' />
             </span>
             <span>Next 7 days</span>
           </div>
