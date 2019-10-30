@@ -60,7 +60,9 @@ export const AddProject = ({shouldShow = false}) => {
           </span>
         </div>
       )}
-      <span className="add-project__plus">+</span>
+      <span className="add-project__plus">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" data-svgs-path="sm1/plus.svg"><path fill="currentcolor" fillRule="evenodd" d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z"></path></svg>
+      </span>
       <span
         aria-label="Add project"
         data-testid="add-project-action"
