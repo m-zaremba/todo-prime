@@ -5,6 +5,7 @@ import {collatedTasks} from '../constants';
 import {getTitle, getCollatedTitle, collatedTasksExist} from '../helpers';
 import {useSelectedProjectValue, useProjectsValue} from '../context';
 import {AddTask} from './AddTask';
+import moment from 'moment';
 
 
 export const Tasks = () => {
@@ -28,7 +29,11 @@ export const Tasks = () => {
 
   return (
     <div className="tasks" data-testid='tasks'>
-      <h2 data-testid='project-name'>{projectName}</h2>
+      <h2 data-testid='project-name'>
+        {projectName}
+        <span className="date">{projectName === 'Today' ? moment().format('ddd DD MMM') : null}</span>
+      </h2>
+
 
       <ul className="tasks__list">
         {tasks.map(task => (

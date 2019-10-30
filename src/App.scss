@@ -222,7 +222,7 @@ $generic-bg: rgb(219, 77, 64);
   }
 
   .add-task__shallow:hover .add-task__plus, .add-project:hover .add-project__plus {
-    color: #1F1F1F;
+    color: #1F1F1F !important;
     background-color: $generic-bg;
 
     svg {
@@ -557,6 +557,13 @@ header {
    margin: 0 30px 20px 0;
  }
 
+ span {
+   color: #808080;
+   margin-left: 6px;
+   font-size: 11px;
+   font-weight: normal;
+ }
+
  .add-task {
    margin-top: 20px;
  }
@@ -715,7 +722,7 @@ header {
   -ms-flex-align: center;
   align-items: center;
   border-radius: 50%;
-  color: #dd4b39;
+  color: #dd4b39 !important;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -739,7 +746,7 @@ header {
 }
 
 .add-task__shallow:hover .add-task__plus, .add-project:hover .add-project__plus {
-  color: #fff;
+  color: #fff !important;
   background-color: $generic-bg;
 
   svg {

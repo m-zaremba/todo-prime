@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FaPizzaSlice} from 'react-icons/fa';
+import {FaPalette} from 'react-icons/fa';
 import {AddTask} from '../AddTask';
 
 export const Header = ({darkMode, setDarkMode}) => {
@@ -44,7 +44,7 @@ export const Header = ({darkMode, setDarkMode}) => {
                 onClick={() => setDarkMode(!darkMode)}
                 onKeyDown={() => setDarkMode(!darkMode)}
               >
-                <FaPizzaSlice />
+                <FaPalette />
               </button>
             </li>
           </ul>
