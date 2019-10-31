@@ -86,11 +86,6 @@ $generic-bg: rgb(219, 77, 64);
   cursor: pointer;
 }
 
-@mixin transparent-button() {
-  background-color: transparent;
-  border: 0;
-}
-
 @mixin cancel() {
   color: rgb(85, 85, 85);
   cursor: pointer;
@@ -224,9 +219,17 @@ $generic-bg: rgb(219, 77, 64);
   .add-task {
     &__content {
       border: 1px solid rgba(255,255,255,0.1);
-      background-color: #1f1f1f;
+      background-color: #171717;
       color: rgba(255, 255, 255, .87);
     }
+
+    &__overlay {
+      background-color: rgba(0,0,0,0.68);
+    }
+  }
+
+  .add-task__overlay .add-task__main {
+    background-color: #1F1F1F;
   }
 
   .add-project__name {
@@ -238,6 +241,45 @@ $generic-bg: rgb(219, 77, 64);
   .project-delete-modal {
     &__inner {
       background-color: #282828;
+    }
+  }
+
+  .task-date {
+    background-color: #282828;
+    border: 1px solid #171717;
+    -webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    color: rgba(255,255,255,0.87);
+
+    &__list li {
+      @include task-item();
+      padding: 0;
+      color: rgba(255, 255, 255, .87);
+      border-bottom: 1px solid rgba(240, 240, 240, .1);
+    }
+
+    &__list li:hover {
+      background-color: #363636;
+    }
+  }
+
+  .project-overlay {
+    @include box-overlay();
+    background-color: #282828;
+    border: 1px solid #171717;
+    -webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    color: rgba(255,255,255,0.87);
+
+    &__list li {
+      @include task-item();
+      padding: 0;
+      color: rgba(255, 255, 255, .87);
+      border-bottom: 1px solid rgba(240, 240, 240, .1);
+
+      &:hover {
+        background-color: #363636;
+      }
     }
   }
 }
@@ -312,11 +354,15 @@ header {
 
           &.settings__add {
             margin-right: 15px;
-            font-size: 30px;
+            // font-size: 30px;
 
             button {
               @include transparent-button();
               color: rgb(255, 255, 255);
+
+              svg {
+                transform: scale(1.2);
+              }
             }
           }
 
@@ -579,9 +625,9 @@ header {
  }
 
  span {
-   color: #808080;
+   // color: #808080;
    margin-left: 6px;
-   font-size: 11px;
+   font-size: 14px;
    font-weight: normal;
  }
 
@@ -619,11 +665,11 @@ header {
        position: relative;
        border-color: gray;
        color: #343434;
-       height: 16px;
-       width: 16px;
+       height: 18px;
+       width: 18px;
        display: block;
        border: 1px solid gray;
-       border-radius: 16px;
+       border-radius: 18px;
 
        &::before {
          content: '\f00c';
@@ -632,7 +678,8 @@ header {
          color: transparent;
          font-size: 11px;
          font-weight: lighter;
-         left: 2px;
+         left: 3px;
+         top: 1px;
        }
      }
 
@@ -656,8 +703,8 @@ header {
     width: 100%;
     height: 100%;
     z-index: 2000;
-    -webkit-transition: opacity 0.2s ease-in;
-    transition: opacity 0.2s ease-in;
+    -webkit-transition: background .2s ease-in;
+    transition: background .2s ease-in;
     height: calc(100vh);
 
     .add-task__main {
@@ -803,8 +850,16 @@ header {
       span:first-of-type {
         margin-right: 10px;
 
-        svg {
-          fill: grey;
+        .today-icon {
+          fill: #25b84c;
+        }
+
+        .tomorrow-icon {
+          fill: #AB7022;
+        }
+
+        .next_7-icon {
+          fill: #a970ff;
         }
       }
     }

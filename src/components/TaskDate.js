@@ -25,7 +25,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate}) => {
               role="button"
             >
               <span>
-                <FaSpaceShuttle />
+                <FaSpaceShuttle className='today-icon'/>
               </span>
               <span>Today</span>
             </div>
@@ -46,7 +46,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate}) => {
               data-testid='task-date-tomorrow'
             >
               <span>
-                <FaSun />
+                <FaSun className='tomorrow-icon'/>
               </span>
               <span>Tomorrow</span>
             </div>
@@ -67,7 +67,7 @@ export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate}) => {
               data-testid='task-date-next-week'
             >
               <span>
-                <FaRegPaperPlane />
+                <FaRegPaperPlane className='next_7-icon'/>
               </span>
               <span>Next week</span>
             </div>
