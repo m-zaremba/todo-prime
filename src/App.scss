@@ -8,6 +8,7 @@ html {
 
 *, *::before, *::after {
   box-sizing: inherit;
+  outline: none;
 }
 
 body {
@@ -20,6 +21,7 @@ body {
   font-smooth: always;
   -webkit-font-smoohing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 ul {
@@ -229,7 +231,23 @@ $generic-bg: rgb(219, 77, 64);
       transform: scale(0.846);
     }
   }
+
+  .add-task {
+    &__content {
+      border: 1px solid rgba(255,255,255,0.1);
+      background-color: #1f1f1f;
+      color: rgba(255, 255, 255, .87);
+    }
+  }
+
+  .project-delete-modal {
+    &__inner {
+      background-color: #282828;
+    }
+  }
 }
+
+
 
 //Header
 
@@ -498,15 +516,18 @@ header {
   position: relative;
 
   &__inner {
+    display: flex;
+    flex-direction: column;
     @include box-overlay();
     z-index: 99;
-    width: 200px;
+    min-width: 333px !important;
     padding: 10px;
-    top: 10px;
-    right: 0;
+    top: 0;
+    left: 0;
     background-color: white;
 
     p {
+      display: block;
       margin-top: 5px;
       margin-bottom: 5px;
       line-height: normal;
@@ -691,7 +712,7 @@ header {
   &__content {
     width: 100%;
     border: 1px solid #ddd;
-    background-color: white !important;
+    background-color: white;
     border-radius: 3px;
     height: 35px;
     padding-left: 10px;
