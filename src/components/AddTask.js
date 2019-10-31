@@ -115,6 +115,7 @@ export const AddTask = ({
             type="text"
             className="add-task__content"
             data-testid='add-task-content'
+            placeholder='e.g. arrange a meeting at 11'
             value={task}
             onChange={e => setTask(e.target.value)}
           />

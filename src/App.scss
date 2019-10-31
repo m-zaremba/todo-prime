@@ -152,17 +152,6 @@ $generic-bg: rgb(219, 77, 64);
 
     &__project {
 
-      &-delete {
-
-        svg {
-          color: rgb(201, 201, 201);
-
-          &:hover {
-            color: $generic-bg;
-          }
-        }
-      }
-
       &.active, &:hover {
         background-color: #363636;
       }
@@ -238,6 +227,12 @@ $generic-bg: rgb(219, 77, 64);
       background-color: #1f1f1f;
       color: rgba(255, 255, 255, .87);
     }
+  }
+
+  .add-project__name {
+    border: 1px solid rgba(255,255,255,0.1);
+    background-color: #1f1f1f;
+    color: rgba(255, 255, 255, .87);
   }
 
   .project-delete-modal {
@@ -384,7 +379,12 @@ header {
 
       svg {
         color: rgb(201, 201, 201);
+
+        &:hover {
+          color: $generic-bg;
+        }
       }
+
     }
 
     &.active, &:hover {
@@ -842,7 +842,7 @@ header {
   &__name {
     width: 100%;
     border: 1px solid #ddd;
-    background-color: white !important;
+    background-color: white;
     border-radius: 3px;
     height: 35px;
     padding-left: 10px;
