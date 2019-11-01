@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TODO-PRIME
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+The application was written according to the tutorial created by Karl Hadwen (I highly recommend watching it - just click [here](https://www.youtube.com/watch?time_continue=2&v=HgfA4W_VjmI)). It is a Todoist clone written from the scratch - starting from 'create-react-app', through React Hooks, Custom Hooks, Context, SCSS for styling and ending with tests using the React Testing Library.
 
-### `npm start`
+After finishing the tutorial, I added:
+* more style (especially darkmode)
+* mobile version of the sidebar component (including changes in behavior of the necessary dependent components)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Using terminal clone this repository and run npm install.
 
-### `npm test`
+```
+git clone https://github.com/m-zaremba/todo-prime.git
+cd todo-prime
+npm install
+or
+yarn install
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Configuring firebase
 
-### `npm run build`
+Configure your own firebase project (you can follow the instructions in [this](https://css-tricks.com/intro-firebase-react/)  tutorial - sections from #Creating our Firebase Database) and paste your values into /src/firebase.js file.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Starting the app
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+After installation start the app with:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm start
+or
+yarn start
+```
 
-### `npm run eject`
+Now try to add a project - if it doesn't show up open the console in the browser and then go to 1:55:16 of the Karl's tutorial. Debug firebase accordingly and the app should work fine!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### TODO:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* User signup/login
