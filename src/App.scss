@@ -274,7 +274,6 @@ $generic-bg: rgb(219, 77, 64);
   }
 
   .project-overlay {
-    @include box-overlay();
     background-color: #282828;
     border: 1px solid #171717;
     -webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -911,6 +910,7 @@ header {
 .task-date {
   @include box-overlay();
   background-color: #fff;
+  top: 140px;
   width: 200px;
   right: 0;
 
@@ -947,6 +947,9 @@ header {
 
 .project-overlay {
   @include box-overlay();
+  top: 140px;
+  width: 65%;
+  right: 0;
   background-color: white;
 
   &__list li {
