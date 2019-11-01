@@ -3,7 +3,8 @@ import {FaTrashAlt} from 'react-icons/fa';
 import {useProjectsValue, useSelectedProjectValue} from '../context';
 import {firebase} from '../firebase';
 
-export const IndividualProject = ({project}) => {
+export const IndividualProject = ({project, activeValue = null, showSidebar, setShowSidebar}) => {
+  const [active, setActive] = useState(activeValue);
   const [showConfirm, setShowConfirm] = useState(false);
   const {projects, setProjects} = useProjectsValue();
   const {setSelectedProject} = useSelectedProjectValue();
@@ -23,7 +24,18 @@ export const IndividualProject = ({project}) => {
   return (
     <>
       <span className="sidebar__dot">•</span>
-      <span className="sidebar__project-name">{project.name}</span>
+      <span className="sidebar__project-name"
+        onKeyDown={() => {
+          setActive(project.projectId);
+          setSelectedProject(project.projectId);
+          showSidebar && setShowSidebar(!showSidebar);
+        }}
+        onClick={() => {
+          setActive(project.projectId);
+          setSelectedProject(project.projectId);
+          showSidebar && setShowSidebar(!showSidebar);
+        }}
+      >{project.name}</span>
       <span
         className="sidebar__project-delete"
         aria-label='Confirm deletion of a project'

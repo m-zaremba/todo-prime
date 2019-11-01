@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {useSelectedProjectValue, useProjectsValue} from '../context';
+import {useProjectsValue} from '../context';
 import {IndividualProject} from './IndividualProject';
 
-export const Projects = ({activeValue = null}) => {
-  const [active, setActive] = useState(activeValue);
-  const {setSelectedProject} = useSelectedProjectValue();
+export const Projects = ({activeValue = null, showSidebar, setShowSidebar}) => {
+  const [active] = useState(activeValue);
+  // const {setSelectedProject} = useSelectedProjectValue();
   const {projects} = useProjectsValue();
 
 
@@ -26,16 +26,18 @@ export const Projects = ({activeValue = null}) => {
           role='button'
           data-testid='project-action'
           tabIndex={0}
-          onKeyDown={() => {
-            setActive(project.projectId);
-            setSelectedProject(project.projectId);
-          }}
-          onClick={() => {
-            setActive(project.projectId);
-            setSelectedProject(project.projectId);
-          }}
+          // onKeyDown={() => {
+          //   setActive(project.projectId);
+          //   setSelectedProject(project.projectId);
+          //   showSidebar && setShowSidebar(!showSidebar);
+          // }}
+          // onClick={() => {
+          //   setActive(project.projectId);
+          //   setSelectedProject(project.projectId);
+          //   showSidebar && setShowSidebar(!showSidebar);
+          // }}
         >
-          <IndividualProject project={project} />
+          <IndividualProject project={project} showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
         </div>
       </li>
     ))
