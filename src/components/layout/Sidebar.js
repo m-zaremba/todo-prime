@@ -12,7 +12,7 @@ export const Sidebar = ({showSidebar, setShowSidebar}) => {
   return(
     <>
       {showSidebar ? <div className="backshadow" onClick={() => setShowSidebar(!showSidebar)}></div> : null}
-      <div className={!showSidebar ? 'sidebar' : 'sidebar__open'} data-testid='sidebar'>
+      <div className={!showSidebar ? 'sidebar' : 'sidebar-open'} data-testid='sidebar'>
         <ul className="sidebar__generic">
           <li
             data-testid="inbox"
