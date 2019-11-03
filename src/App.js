@@ -1,21 +1,23 @@
-import React, {useState} from 'react';
-import {Header} from './components/layout/Header';
-import {Content} from './components/layout/Content';
-import {ProjectsProvider, SelectedProjectProvider} from './context'
+import React from 'react';
+import {Home} from './components/routes/Home';
+import LogIn from './components/routes/LogIn';
+import SignUp from './components/routes/SignUp';
+import {Landing} from './components/routes/Landing';
+import {AuthContext, AuthProvider} from './context';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {PrivateRoute} from "./PrivateRoute";
 
-export const App = ({darkModeDefault = false, sidebarMobileShowDefault = false}) => {
-  const [darkMode, setDarkMode] = useState(darkModeDefault);
-  const [sidebarMobileShow, setSidebarMobileShow] = useState(sidebarMobileShowDefault);
-
+export const App = () => {
   return (
-    <SelectedProjectProvider>
-      <ProjectsProvider>
-        <main
-          data-testid='application'
-          className={darkMode? 'darkmode' : undefined}>
-          <Header darkMode={darkMode} setDarkMode={setDarkMode} sidebarMobileShow={sidebarMobileShow} setSidebarMobileShow={setSidebarMobileShow}/>
-          <Content showSidebar={sidebarMobileShow} setShowSidebar={setSidebarMobileShow}/>
-        </main>
-      </ProjectsProvider>
-    </SelectedProjectProvider>)
+    <AuthProvider>
+      <Router>
+        <div>
+          <PrivateRoute exact path='/home' component={Home} />
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/login' component={LogIn} />
+        </div>
+      </Router>
+    </AuthProvider>
+  )
 };
