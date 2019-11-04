@@ -99,6 +99,14 @@ $generic-bg: rgb(219, 77, 64);
   cursor: pointer;
 }
 
+@mixin landing-button() {
+  border: none;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
 @mixin task-item() {
   list-style-type: none;
   display: -webkit-box;
@@ -117,6 +125,16 @@ $generic-bg: rgb(219, 77, 64);
   &:hover {
     background-color: rgb(249, 249, 249);
   }
+}
+
+@mixin landing-backshadow() {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 600;
 }
 
 @mixin mq($from) {
@@ -297,7 +315,7 @@ $generic-bg: rgb(219, 77, 64);
 
 //Header
 
-header {
+.header {
   border-bottom: solid 1px rgb(201, 33, 0);
   background-color: $generic-bg;
   transition: height 200ms ease-in;
@@ -991,4 +1009,144 @@ header {
   &__cancel {
     @include cancel();
   }
+}
+
+//LANDING
+
+.landing {
+  text-align: center;
+
+  &__header {
+    background-color: white;
+    transition: height 200ms ease-in;
+    z-index: 400;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    @include mq('900px') {
+      padding: 0 10px;
+    }
+
+    nav {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      max-width: 72rem;
+      margin: auto;
+
+      @media (min-width: 960px) {
+        max-width: 960px;
+      }
+
+      @media (min-width: 1220px) {
+        max-width: 72rem;
+      }
+
+      .landing__logo {
+        padding-left: 8px;
+        grid-area: 1/1;
+        list-style: none;
+
+        li {
+          height: auto;
+          width: 167px;
+          cursor: pointer;
+          padding: 10px 20px;
+
+          &:hover {
+            background-color: #fafafa;
+          }
+        }
+      }
+
+      .landing__auth {
+        grid-area: 1/2;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+
+
+          .landing__auth-login, .landing__auth-signin {
+            color: #616161;
+            padding: 10px 20px;
+
+            &:hover {
+              color: #202020;
+              background-color: #fafafa;
+              border-bottom: 2px solid #e44232;
+            }
+
+            div {
+              @include landing-button();
+              height: 32px;
+              padding: unset;
+              line-height: 32px;
+            }
+          }
+
+          .landing__auth-signin {
+            color: rgb(219, 77, 64);
+          }
+
+          li {
+            @include va;
+            height: auto;
+            padding: 10px 20px;
+            text-align: center;
+          }
+
+      }
+    }
+  }
+
+  section {
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+    margin-top: 100px;
+    @include va();
+    flex-direction: column;
+
+    h1 {
+      font-size: 84px;
+      text-align: center;
+      white-space: pre-wrap;
+
+      @media (max-width: 1220px) {
+        font-size: 65px;
+      }
+    }
+
+    button {
+      @include btn(180px);
+      border-radius: 8px !important;
+      margin: 0;
+      min-height: 2.5rem;
+      line-height: 1.25rem;
+      font-size: 1.3rem !important;
+      padding: 0.8rem 1.5rem;
+      letter-spacing: -0.35px;
+      border-color: #e44232;
+      background-color: #e44232;
+
+      &:hover {
+        background-color: rgba(228, 66, 50, 0.9);
+        outline: 0;
+        border-color: transparent;
+      }
+    }
+  }
+
+  .landing__image {
+    width: 90%;
+    max-width: 1256px;
+  }
+}
+
+// LogIn/Signup
+
+.login__backshadow, .signup__backshadow {
+  @include landing-backshadow();
 }
