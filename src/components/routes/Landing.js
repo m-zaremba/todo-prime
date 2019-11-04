@@ -1,6 +1,4 @@
-import React, {useState, setState} from 'react';
-import {firebase} from '../../firebase';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
 import Login from './LogIn';
 import Signup from './SignUp';
 
@@ -10,7 +8,8 @@ export const Landing = () => {
 
   return (
     <>
-      {showLogin && <Login /> || showSignup && <Signup />}
+      {showLogin ? <Login setShowLogin={setShowLogin} setShowSignup={setShowSignup}/> : null}
+      {showSignup ? <Signup setShowSignup={setShowSignup}/> : null}
 
       <div className="landing">
         <header className="landing__header">
@@ -74,7 +73,7 @@ export const Landing = () => {
           </h1>
           <button>Get Started</button>
         </section>
-        <img className='landing__image' src='images/landing_background.jpg' alt="picture of people doing daily chores"/>
+        <img className='landing__image' src='images/landing_background.jpg' alt="drawing of people doing daily chores"/>
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,600,700');
 
 //GENERAL SETTINGS
 
@@ -1149,4 +1150,109 @@ $generic-bg: rgb(219, 77, 64);
 
 .login__backshadow, .signup__backshadow {
   @include landing-backshadow();
+}
+
+.login__form, .signup__form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  padding: 2rem;
+  border-radius: 6px;
+  flex-direction: column;
+  background-color: white;
+
+  &-help {
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+
+    p {
+      margin: 0 5px;
+    }
+  }
+
+  &-redirect-action {
+    color: #dd4b39;
+  }
+
+  &-separator {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #fff;
+    position: relative;
+
+    &-middle {
+      position: absolute;
+      padding: 0 16px;
+      color: #777;
+      background: #fff;
+      font-size: 13px;
+      text-shadow: 0 1px 0 #fff;
+      text-transform: uppercase;
+      top: -9px;
+      left: 41%;
+    }
+  }
+
+  &-title {
+    @include va();
+    justify-content: space-between;
+    width: 350px;
+    height: 30px;
+
+    h6 {
+      font-size: 14px;
+    }
+
+    svg {
+      color: #999999;
+
+      &:hover {
+        cursor: pointer;
+        color: #999999;
+      }
+    }
+
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    max-width: 410px;
+    width: 100%;
+    font-size: 13px;
+    color: #333;
+    margin: auto;
+    padding-top: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input {
+      box-sizing: border-box;
+      font-size: 13px;
+      font-weight: normal;
+      width: 100%;
+      padding: .75em 1em;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 1em;
+    }
+
+    button {
+      @include btn(100%);
+      font-size: 13px;
+      font-weight: bold;
+      padding: 9px 12px;
+    }
+  }
 }
