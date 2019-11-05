@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {FaRegListAlt, FaRegCalendarAlt} from 'react-icons/fa';
 import moment from 'moment';
 import {firebase} from '../firebase';
-import {useSelectedProjectValue} from '../context';
+import {useSelectedProjectValue, AuthContext} from '../context';
 import {ProjectOverlay} from './ProjectOverlay';
 import {TaskDate} from './TaskDate';
 
@@ -18,6 +18,7 @@ export const AddTask = ({
   const [showMain, setShowMain] = useState(shouldShowMain);
   const [showProjectOverlay, setShowProjectOverlay] = useState(false);
   const [showTaskDate, setShowTaskDate] = useState(false);
+  const {currentUser} = useContext(AuthContext);
 
   const {selectedProject} = useSelectedProjectValue();
 
@@ -42,7 +43,7 @@ export const AddTask = ({
           projectId,
           task,
           date: collatedDate || taskDate,
-          userId: 'testUserForTheAppDevelopment'
+          userId: currentUser.uid
         })
         .then(() => {
           setTask('');
