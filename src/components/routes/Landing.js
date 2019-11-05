@@ -71,7 +71,7 @@ export const Landing = () => {
           <h1 className="landing-title__headline">
             Organize it all {'\n'} with Todoist
           </h1>
-          <button>Get Started</button>
+          <button onClick={() => setShowSignup(true)}>Get Started</button>
         </section>
         <img className='landing__image' src='images/landing_background.jpg' alt="drawing of people doing daily chores"/>
       </div>

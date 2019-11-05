@@ -5,7 +5,7 @@ import {firebase} from '../../firebase';
 const SignUp = ({ history, setShowSignup }) => {
   const handleSignUp = useCallback(async event => {
     event.preventDefault();
-    const { email, password } = event.target.elements;
+    const {email, password } = event.target.elements;
     try {
       await firebase
         .auth()
@@ -29,8 +29,6 @@ const SignUp = ({ history, setShowSignup }) => {
           </div>
         </div>
         <form className='signup__form-content' onSubmit={handleSignUp}>
-          <label htmlFor='name'>Email</label>
-          <input name="name" type="text"/>
           <label htmlFor='email'>Email</label>
           <input name="email" type="email"/>
           <label htmlFor='password'>Password</label>

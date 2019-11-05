@@ -157,6 +157,49 @@ $generic-bg: rgb(219, 77, 64);
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
     background-color: #282828;
     border-color: transparent;
+
+    .settings {
+
+      ul {
+        li{
+          button {
+            color: rgba(255,255,255,0.87);
+          }
+        }
+      }
+      &__menu-list {
+        background-color: #282828;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        border: 1px solid #171717;
+
+        &::before {
+          background-color: #282828;
+          border: unset;
+          border-left: 1px solid #171717;
+          border-top: 1px solid #171717;
+          border-bottom-right-radius: 100%;
+        }
+      }
+
+
+
+      &__menu-list-buttons {
+
+        li:hover {
+          background-color: #363636;
+        }
+
+        button {
+          color: rgba(255,255,255,0.87);;
+        }
+
+        .separator {
+          div {
+            background-color: rgba(255,255,255,0.1);
+          }
+        }
+      }
+    }
   }
 
   .backshadow {
@@ -332,6 +375,7 @@ $generic-bg: rgb(219, 77, 64);
   }
 
   nav {
+    position: relative;
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr;
@@ -347,89 +391,155 @@ $generic-bg: rgb(219, 77, 64);
     color: white;
   }
 
-  div {
-    &.logo {
-      padding-left: 8px;
-      grid-area: 1/1;
+  .logo {
+    padding-left: 8px;
+    grid-area: 1/1;
 
-      img {
-        width: 24px;
+    img {
+      width: 24px;
 
-        @include mq('900px') {
-          display: none;
-        }
+      @include mq('900px') {
+        display: none;
+      }
+    }
+
+    svg {
+      display: none;
+      color: white;
+      padding: 2px;
+      transform: scale(1.2);
+      cursor: pointer;
+
+      &:hover {
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, .2);
       }
 
-      svg {
-        display: none;
-        color: white;
-        padding: 2px;
-        transform: scale(1.2);
+      @include mq('900px') {
+        display: block;
+      }
+    }
+  }
+
+  .settings {
+    grid-area: 1/2;
+    text-align: right;
+
+    ul {
+      float: right;
+
+      li {
+        @include va;
+        list-style-type: none;
         cursor: pointer;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        vertical-align: middle;
+        float: left;
+        margin-left: 10px;
 
         &:hover {
           border-radius: 3px;
           background-color: rgba(255, 255, 255, .2);
         }
 
-        @include mq('900px') {
-          display: block;
+        button {
+          @include transparent-button();
+          color: rgb(255, 255, 255);
+          line-height: normal;
+
+          svg {
+            transform: scale(1.2);
+          }
+
+        }
+
+        &.settings__menu-button {
+          padding-top: 4px;
+
+          &-icon {
+            font-size: 13px;
+          }
         }
       }
-
-
     }
 
-    &.settings {
-      grid-area: 1/2;
-      text-align: right;
+    &__menu-list {
+      position: absolute;
+      top: 43px;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      border-radius: 3px;
+      box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.08);
+      border: 1px solid #dddddd;
+      -webkit-transform: translateY(1px);
+      transform: translateY(1px);
+      padding: 5px 0;
 
-      ul {
-        float: right;
+      &::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        right: 8px;
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        transform: rotate(45deg);
+        border-bottom-right-radius: 100%;
+      }
+    }
 
-        li {
-          @include va;
 
-          list-style-type: none;
-          cursor: pointer;
-          width: 30px;
-          height: 30px;
-          text-align: center;
-          vertical-align: middle;
-          float: left;
 
-          &:hover {
-            border-radius: 3px;
-            background-color: rgba(255, 255, 255, .2);
-          }
+    &__menu-list-buttons {
+      min-width: 250px;
+      list-style: none;
 
-          &.settings__add {
-            margin-right: 15px;
-            // font-size: 30px;
+      li {
+        margin: 0;
+      }
 
-            button {
-              @include transparent-button();
-              color: rgb(255, 255, 255);
+      li:hover {
+        cursor: pointer;
+        background-color: #f3f3f3;
+      }
 
-              svg {
-                transform: scale(1.2);
-              }
-            }
-          }
+      button {
+        @include transparent-button();
+        color: #333333;
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        height: 100%;
+        width: 100%;
+        padding: 5px 10px;
 
-          &.settings__darkmode {
+        &.settings__logout-btn:hover {
+          color: #de4c4a;
+        }
 
-            button {
-              @include transparent-button();
-              color: rgb(255, 255, 255);
-              display: flex;
-            }
+        span {
+          margin-left: 10px;
+        }
 
-            svg {
-              width: 20px;
-              height: 20px;
-            }
-          }
+      }
+
+      .separator {
+        padding: 4px 0;
+        line-height: 1px;
+
+        div {
+          padding: 0;
+          height: 1px;
+          background-color: #dddddd;
+        }
+
+        &:hover {
+          background-color: transparent;
+          cursor: default;
         }
       }
     }
@@ -1143,6 +1253,7 @@ $generic-bg: rgb(219, 77, 64);
   .landing__image {
     width: 90%;
     max-width: 1256px;
+    margin-top: -90px;
   }
 }
 
@@ -1175,6 +1286,10 @@ $generic-bg: rgb(219, 77, 64);
 
   &-redirect-action {
     color: #dd4b39;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &-separator {
@@ -1246,6 +1361,10 @@ $generic-bg: rgb(219, 77, 64);
       border: 1px solid #ddd;
       border-radius: 5px;
       margin-bottom: 1em;
+
+      &:active, &:focus {
+        outline: -webkit-focus-ring-color auto 1px;
+      }
     }
 
     button {
@@ -1256,3 +1375,5 @@ $generic-bg: rgb(219, 77, 64);
     }
   }
 }
+
+//Settings

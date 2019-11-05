@@ -30,7 +30,7 @@ const Login = ({ history, setShowLogin, setShowSignup }) => {
     <div className="login__backshadow">
       <div className='login__form'>
         <div className="login__form-title">
-          <h6>Log in</h6>
+          <h6>Login</h6>
           <svg onClick={() => setShowLogin(false)} width="24" height="24"><path fill="currentColor" fillRule="evenodd" d="M12 10.62l4.833-4.834a.976.976 0 111.381 1.38L13.381 12l4.833 4.833a.976.976 0 01-1.38 1.381L12 13.381l-4.833 4.833a.976.976 0 01-1.381-1.38L10.619 12 5.786 7.167a.976.976 0 111.38-1.381L12 10.619z"></path></svg>
         </div>
         <div className="login__form-separator">

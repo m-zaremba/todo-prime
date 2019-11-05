@@ -4,6 +4,7 @@ import {useProjectsValue, useSelectedProjectValue} from '../context';
 import {firebase} from '../firebase';
 
 export const IndividualProject = ({project, activeValue = null, showSidebar, setShowSidebar}) => {
+  // eslint-disable-next-line
   const [active, setActive] = useState(activeValue);
   const [showConfirm, setShowConfirm] = useState(false);
   const {projects, setProjects} = useProjectsValue();
