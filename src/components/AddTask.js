@@ -81,7 +81,7 @@ export const AddTask = ({
           {showQuickAddTask && (
             <>
               <div data-testid='quick-add-task'>
-                <h2 className="header">Quick Add Task</h2>
+                <h2 className="quick-add-task__header">Quick Add Task</h2>
                 <span
                   className="add-task__cancel-x"
                   aria-label='Cancel adding task'

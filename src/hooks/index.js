@@ -46,6 +46,7 @@ export const useTasks = selectedProject => {
       });
 
       return () => unsubscribe();
+      // eslint-disable-next-line
   }, [selectedProject]);
 
   return {tasks, archivedTasks};
@@ -72,6 +73,7 @@ export const useProjects = () => {
           setProjects(allProjects);
         }
       });
+      // eslint-disable-next-line
   }, [projects]);
 
   return {projects, setProjects};

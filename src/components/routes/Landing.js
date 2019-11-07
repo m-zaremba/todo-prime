@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import Login from './LogIn';
-import Signup from './SignUp';
+import Login from '../Login';
+import Signup from '../Signup';
+import {LandingSidebar} from '../layout/LandingSidebar';
 
 export const Landing = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
+  const [showLandingMenu, setShowLandingMenu] = useState(false);
+
 
   return (
     <>
@@ -13,7 +16,9 @@ export const Landing = () => {
 
       <div className="landing">
         <header className="landing__header">
-          <nav>
+          {showLandingMenu ? <div className="landing__backshadow"></div> : null}
+          <LandingSidebar showLandingMenu={showLandingMenu} setShowSignup={setShowSignup} setShowLogin={setShowLogin}/>
+          <nav className='landing__navbar'>
             <ul className="landing__logo">
               <li
                 tabIndex='0'
@@ -63,6 +68,11 @@ export const Landing = () => {
                 >
                   Signup
                 </div>
+              </li>
+              <li
+                className="landing__mobile-menu"
+                onClick={() => setShowLandingMenu(!showLandingMenu)}>
+                <div className={showLandingMenu ? 'landing__mobile-menu-button active' : 'landing__mobile-menu-button'}></div>
               </li>
             </ul>
           </nav>

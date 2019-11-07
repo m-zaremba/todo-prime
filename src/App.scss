@@ -18,7 +18,6 @@ body {
   line-height: 1;
   font-family: 'Roboto', sans-serif;
   color: rgb(32, 32, 32);
-  // background-color: rgb(250, 250, 250);
   font-smooth: always;
   -webkit-font-smoohing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -300,6 +299,10 @@ $generic-bg: rgb(219, 77, 64);
     }
   }
 
+  .quick-add-task__header {
+    color: white;
+  }
+
   .add-task__overlay .add-task__main {
     background-color: #1F1F1F;
   }
@@ -354,7 +357,6 @@ $generic-bg: rgb(219, 77, 64);
     }
   }
 }
-
 
 
 //Header
@@ -492,8 +494,6 @@ $generic-bg: rgb(219, 77, 64);
       }
     }
 
-
-
     &__menu-list-buttons {
       min-width: 250px;
       list-style: none;
@@ -546,6 +546,7 @@ $generic-bg: rgb(219, 77, 64);
   }
 }
 
+
 // Sidebar
 
 .backshadow {
@@ -581,8 +582,6 @@ $generic-bg: rgb(219, 77, 64);
     &-open {
       transform: translateX(0);
     }
-
-
   }
 
   li {
@@ -623,7 +622,6 @@ $generic-bg: rgb(219, 77, 64);
           color: $generic-bg;
         }
       }
-
     }
 
     &.active, &:hover {
@@ -707,8 +705,6 @@ $generic-bg: rgb(219, 77, 64);
       line-height: 1.5;
       font-size: 15px;
       padding: inherit 0;
-      // padding-left: 0;
-      // padding-right: 0;
 
       div:nth-child(1) {
         display: flex;
@@ -740,7 +736,6 @@ $generic-bg: rgb(219, 77, 64);
         }
       }
 
-
       &.active, &:hover {
         font-weight: bold;
         background-color: white;
@@ -748,6 +743,7 @@ $generic-bg: rgb(219, 77, 64);
     }
   }
 }
+
 
 //CONFIRM DELETE PROJECT POPUP
 
@@ -759,7 +755,6 @@ $generic-bg: rgb(219, 77, 64);
     display: flex;
     flex-direction: column;
     @include box-overlay();
-    // z-index: 99;
     min-width: 290px !important;
     padding: 10px;
     top: 0;
@@ -791,6 +786,7 @@ $generic-bg: rgb(219, 77, 64);
   }
 }
 
+
 //MAIN Content
 
 .content {
@@ -800,6 +796,7 @@ $generic-bg: rgb(219, 77, 64);
   max-width: 922px;
   margin: auto;
 }
+
 
 //TASKS
 
@@ -813,92 +810,93 @@ $generic-bg: rgb(219, 77, 64);
   padding: 80px 40px;
 
   @include mq('900px') {
-   margin-left: 0;
-   width: auto;
- }
+    margin-left: 0;
+    width: auto;
+  }
 
- h2 {
-   font-size: 20px;
-   font-weight: normal;
-   margin: 0 30px 20px 0;
- }
+  h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0 30px 20px 0;
+  }
 
- span {
-   // color: #808080;
-   margin-left: 6px;
-   font-size: 14px;
-   font-weight: normal;
- }
+  span {
+    margin-left: 6px;
+    font-size: 14px;
+    font-weight: normal;
+  }
 
- .add-task {
-   margin-top: 20px;
- }
+  .add-task {
+    margin-top: 20px;
+  }
 
- &__list li {
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   line-height: 18px;
-   color: #333;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   font-size: 14px;
-   list-style-type: none;
-   border-bottom: 1px solid #f0f0f0;
+  &__list li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 18px;
+    color: #333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    list-style-type: none;
+    border-bottom: 1px solid #f0f0f0;
 
-   .checkbox-holder {
-     margin-right: 20px;
-     display: -webkit-box;
-     display: -ms-flexbox;
-     display: flex;
-     -webkit-box-align: center;
-         -ms-flex-align: center;
-             align-items: center;
-     -webkit-box-pack: center;
-         -ms-flex-pack: center;
-             justify-content: center;
-     line-height: 16px;
+    .checkbox-holder {
+      margin-right: 20px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+        -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+        -ms-flex-pack: center;
+      justify-content: center;
+      line-height: 16px;
 
-     .checkbox {
-       background-color: transparent;
-       cursor: pointer;
-       position: relative;
-       border-color: gray;
-       color: #343434;
-       height: 18px;
-       width: 18px;
-       display: block;
-       border: 1px solid gray;
-       border-radius: 18px;
+      .checkbox {
+        background-color: transparent;
+        cursor: pointer;
+        position: relative;
+        border-color: gray;
+        color: #343434;
+        height: 18px;
+        width: 18px;
+        display: block;
+        border: 1px solid gray;
+        border-radius: 18px;
 
-       &:hover {
-         transition: background-color .5s;
-         background-color: rgba(128,128,128,0.2);
-       }
+        &:hover {
+          transition: background-color .5s;
+          background-color: rgba(128,128,128,0.2);
+        }
 
-       &::before {
-         content: '\f00c';
-         font-family: 'FontAwesome';
-         position: absolute;
-         color: transparent;
-         font-size: 11px;
-         font-weight: lighter;
-         left: 3px;
-         top: 1px;
-       }
-     }
+        &::before {
+          content: '\f00c';
+          font-family: 'FontAwesome';
+          position: absolute;
+          color: transparent;
+          font-size: 11px;
+          font-weight: lighter;
+          left: 3px;
+          top: 1px;
+        }
+      }
 
-     .checkbox:hover::before {
-       transition: color .5s;
-       color: gray;
-     }
-   }
- }
+      .checkbox:hover::before {
+        transition: color .5s;
+        color: gray;
+      }
+    }
+  }
 }
+
 
 //ADD TASK
 
 .add-task {
+
   &__overlay {
     background: rgba(102,102,102,0.5);
     position: absolute;
@@ -929,9 +927,8 @@ $generic-bg: rgb(219, 77, 64);
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
 
-      .header {
+      .quick-add-task__header {
         font-size: 13px;
-        margin-bottom: 20px;
         float: left;
       }
     }
@@ -942,7 +939,6 @@ $generic-bg: rgb(219, 77, 64);
       float: right;
       font-weight: bold;
       font-size: 12px;
-      margin-top: 10px;
     }
   }
 
@@ -1034,6 +1030,7 @@ $generic-bg: rgb(219, 77, 64);
   margin-left: 15px;
 }
 
+
 //TASK Date
 
 .task-date {
@@ -1072,6 +1069,7 @@ $generic-bg: rgb(219, 77, 64);
   }
 }
 
+
 //PROJECT OVERLAY
 
 .project-overlay {
@@ -1091,6 +1089,7 @@ $generic-bg: rgb(219, 77, 64);
     }
   }
 }
+
 
 //ADD Project
 
@@ -1122,6 +1121,7 @@ $generic-bg: rgb(219, 77, 64);
   }
 }
 
+
 //LANDING
 
 .landing {
@@ -1137,9 +1137,10 @@ $generic-bg: rgb(219, 77, 64);
 
     @include mq('900px') {
       padding: 0 10px;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
     }
 
-    nav {
+    .landing__navbar {
       display: grid;
       align-items: center;
       grid-template-columns: 1fr 1fr;
@@ -1180,36 +1181,90 @@ $generic-bg: rgb(219, 77, 64);
         display: flex;
         justify-content: flex-end;
 
+        .landing__auth-login, .landing__auth-signin {
+          color: #616161;
+          padding: 10px 20px;
 
-          .landing__auth-login, .landing__auth-signin {
-            color: #616161;
-            padding: 10px 20px;
-
-            &:hover {
-              color: #202020;
-              background-color: #fafafa;
-              border-bottom: 2px solid #e44232;
-            }
-
-            div {
-              @include landing-button();
-              height: 32px;
-              padding: unset;
-              line-height: 32px;
-            }
+          &:hover {
+            color: #202020;
+            background-color: #fafafa;
+            border-bottom: 2px solid #e44232;
           }
 
-          .landing__auth-signin {
-            color: rgb(219, 77, 64);
+          div {
+            @include landing-button();
+            height: 32px;
+            padding: unset;
+            line-height: 32px;
           }
 
-          li {
-            @include va;
-            height: auto;
-            padding: 10px 20px;
-            text-align: center;
+          @include mq('900px') {
+            display: none;
+          }
+        }
+
+        .landing__auth-signin {
+          color: rgb(219, 77, 64);
+        }
+
+        .landing__mobile-menu {
+          display: none;
+
+          @include mq('900px') {
+            display: unset;
           }
 
+        }
+
+        .landing__mobile-menu-button {
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 3.8rem;
+          cursor: pointer;
+          padding: 0 1.2rem;
+          position: absolute;
+        }
+
+        .landing__mobile-menu-button::before,
+        .landing__mobile-menu-button::after {
+          width: 1.5rem;
+          height: 2px;
+          right: 1.2rem;
+          position: absolute;
+          background: #3c3c3c;
+          transition: transform 350ms cubic-bezier(0.25, 0.8, 0.25, 1);
+          content: '';
+        }
+
+        .landing__mobile-menu-button {
+          &::before {
+            top: 43%;
+          }
+
+          &.active::before {
+            transform: rotate(45deg);
+            top: 49%;
+          }
+        }
+
+        .landing__mobile-menu-button {
+          &::after {
+            top: 55%;
+          }
+
+          &.active::after {
+            transform: rotate(-45deg);
+            top: 49%;
+          }
+        }
+
+        li {
+          @include va;
+          height: auto;
+          padding: 10px 20px;
+          text-align: center;
+        }
       }
     }
   }
@@ -1254,10 +1309,101 @@ $generic-bg: rgb(219, 77, 64);
     width: 90%;
     max-width: 1256px;
     margin-top: -90px;
+
+    @include mq('900px') {
+      width: 100%;
+      margin-top: 0;
+    }
   }
 }
 
-// LogIn/Signup
+
+//LANDING SIDEBAR
+
+.landing__backshadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.landing__sidebar, .landing__sidebar-open {
+  @include no-select();
+  width: 266px;
+  height: calc(100vh);
+  padding-top: 74px;
+  padding-left: 10px;
+  border-right: $generic-border;
+  background-color: white;
+  display: none;
+
+
+  @include mq('900px') {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overlay-x: hidden;
+    overlay-y: hidden;
+    display: block;
+
+    transform: translateX(266px);
+    transition: transform .2s ease-in;
+
+    &-open {
+      transform: translateX(0);
+      border-left: 1px solid #dedede;
+    }
+  }
+
+  ul {
+    list-style: none;
+    color: #616161;
+    line-height: 1.4;
+    padding: 0.5rem 0;
+    text-align: left;
+  }
+}
+
+.landing__sidebar-content {
+  height: 98%;
+  padding-top: 40px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.landing__sidebar-signup {
+  width: 100%;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid #e44232;
+  justify-content: center;
+
+  li {
+    color: #e44232;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #e44232;
+
+    li {
+      color: white;
+    }
+  }
+}
+
+.landing__sidebar-login:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+
+// Login/Signup
 
 .login__backshadow, .signup__backshadow {
   @include landing-backshadow();
@@ -1375,5 +1521,3 @@ $generic-bg: rgb(219, 77, 64);
     }
   }
 }
-
-//Settings

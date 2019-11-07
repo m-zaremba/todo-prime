@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import { withRouter } from "react-router";
-import {firebase} from '../../firebase';
+import {firebase} from '../firebase';
 
-const SignUp = ({ history, setShowSignup }) => {
-  const handleSignUp = useCallback(async event => {
+const Signup = ({ history, setShowSignup }) => {
+  const handleSignup = useCallback(async event => {
     event.preventDefault();
     const {email, password } = event.target.elements;
     try {
@@ -28,7 +28,7 @@ const SignUp = ({ history, setShowSignup }) => {
             WITH
           </div>
         </div>
-        <form className='signup__form-content' onSubmit={handleSignUp}>
+        <form className='signup__form-content' onSubmit={handleSignup}>
           <label htmlFor='email'>Email</label>
           <input name="email" type="email"/>
           <label htmlFor='password'>Password</label>
@@ -40,4 +40,4 @@ const SignUp = ({ history, setShowSignup }) => {
   );
 };
 
-export default withRouter(SignUp);
+export default withRouter(Signup);
