@@ -39,4 +39,5 @@ Now try to add a project - if it doesn't show up open the console in the browser
 
 ### TODO:
 
-* User signup/login
+* Fix router bug (redirecting logged in user to landing page after page refresh)
+* Restructure app's theme 'provider'
