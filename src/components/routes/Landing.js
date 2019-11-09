@@ -1,13 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import {Redirect} from "react-router";
 import Login from '../Login';
 import Signup from '../Signup';
 import {LandingSidebar} from '../layout/LandingSidebar';
+import { AuthContext } from '../../context';
 
 export const Landing = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
   const [showLandingMenu, setShowLandingMenu] = useState(false);
+  const { currentUser } = useContext(AuthContext);
 
+  if (currentUser) {
+    return <Redirect to="/home" />;
+  }
 
   return (
     <>
@@ -87,4 +93,6 @@ export const Landing = () => {
       </div>
     </>
   );
+
+
 };

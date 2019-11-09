@@ -1,7 +1,6 @@
-import React, { useCallback, useContext } from "react";
-import { withRouter, Redirect } from "react-router";
+import React, {useCallback} from "react";
+import {withRouter} from "react-router";
 import {firebase} from '../firebase';
-import { AuthContext } from '../context';
 
 const Login = ({ history, setShowLogin, setShowSignup }) => {
   const handleLogin = useCallback(
@@ -19,12 +18,6 @@ const Login = ({ history, setShowLogin, setShowSignup }) => {
     },
     [history]
   );
-
-  const { currentUser } = useContext(AuthContext);
-
-  if (currentUser) {
-    return <Redirect to="/home" />;
-  }
 
   return (
     <div className="login__backshadow">
