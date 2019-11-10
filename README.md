@@ -7,6 +7,9 @@ The application was written according to the tutorial created by Karl Hadwen (I 
 After finishing the tutorial, I added:
 * more style (especially darkmode)
 * mobile version of the sidebar component (including changes in behavior of the necessary dependent components)
+* firebase authorization + react routing
+
+Live preview [here](https://laughing-dubinsky-05c5d1.netlify.com/). If you don't want to create account use: 'test@test.com' as login and 'testPassword' for the password.
 
 ## Installation
 
@@ -39,5 +42,5 @@ Now try to add a project - if it doesn't show up open the console in the browser
 
 ### TODO:
 
-* Fix router bug (redirecting logged in user to landing page after page refresh)
-* Restructure app's theme 'provider'
+* Restructure app's theme 'provider' (?)
+* Improve accessibility
